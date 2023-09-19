@@ -2,44 +2,53 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    Layout = "_Login";
+
 }
 
-<div class="row mb-auto">
-    <div class="col-md-4">
-        <div class="row no-gutters border mb-4">
-            <div class="col p-4 mb-4 ">
-                <p class="card-text">
-                    Contoso University is a sample application that
-                    demonstrates how to use Entity Framework Core in an
-                    ASP.NET Core Razor Pages web app.
-                </p>
+<head>
+    <style>
+        body {
+            background-image: url(imgs/university.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>    
+    <section class="vh-100">        
+        <div class="container py-5 h-100">            
+            <div class="row d-flex justify-content-center align-items-center h-100">                
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">                    
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+
+                            <h3 class="mb-5">Login</h3>
+
+                            <div class="form-outline mb-4">
+                                <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="user1234"/>
+                                <label class="form-label" for="typeEmailX-2">Username</label>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="●●●●●●" />
+                                <label class="form-label" for="typePasswordX-2">Password</label>
+                            </div>
+
+                            <!-- Checkbox -->
+                            <div class="form-check d-flex justify-content-start mb-4">
+                                <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+                                <label class="form-check-label" for="form1Example3"> Remember password </label>
+                            </div>
+
+                            <a class="btn btn-primary btn-lg btn-block" type="submit" asp-page="/Students/Index">Login</a>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <div class="row no-gutters border mb-4">
-            <div class="col p-4 d-flex flex-column position-static">
-                <p class="card-text mb-auto">
-                    You can build the application by following the steps in a series of tutorials.
-                </p>
-                <p>
-                    @* <a href="https://docs.microsoft.com/aspnet/core/data/ef-rp/intro" class="stretched-link">See the tutorial</a>
-                    *@
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="row no-gutters border mb-4">
-            <div class="col p-4 d-flex flex-column">
-                <p class="card-text mb-auto">
-                    You can download the completed project from GitHub.
-                </p>
-                <p>
-                    @* <a href="https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/data/ef-rp/intro/samples" class="stretched-link">See project source code</a>
-                    *@
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+    </section>
+</body>
